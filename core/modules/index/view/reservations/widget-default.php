@@ -116,13 +116,19 @@ if($_GET["q"]!=""||$_GET["project_id"]!="" ||$_GET["category_id"]!="" ){
 			</thead>
 			<?php
 			foreach($users as $user){
+				$project = null;
+				if($user->project_id!=null){
 				$project  = $user->getProject();
+				}
+				$category = null;
+				if($user->category_id!=null){
 				$category = $user->getCategory();
+				}
 				?>
 				<tr>
 				<td><?php echo $user->title; ?></td>
-				<td><?php echo $project->name; ?></td>
-				<td><?php echo $category->name; ?></td>
+				<td><?php if($project!=null ){ echo $project->name;} ?></td>
+				<td><?php if($category!=null){ echo $category->name; }?></td>
 				<td><?php echo $user->date_at." ".$user->time_at; ?></td>
 				<td style="width:130px;">
 				<a href="index.php?view=editreservation&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a>
