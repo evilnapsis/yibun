@@ -1,7 +1,7 @@
 <?php
 
-$client = MedicData::getById($_GET["id"]);
+$client = ContactData::getById($_GET["id"]);
 $client->del();
-Core::redir("./index.php?view=medics");
+Core::redir("./index.php?view=contacts");
 
 ?>
