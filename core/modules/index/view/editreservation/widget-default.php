@@ -14,7 +14,7 @@ $medics = CategoryData::getAll();
       <input type="date" name="date_at" value="<?php echo $reservation->date_at; ?>" required class="form-control" id="inputEmail1" placeholder="Fecha">
     </div>
     <div class="col-lg-5">
-      <input type="time" name="time_at" value="<?php echo $reservation->time_at; ?>" required class="form-control" id="inputEmail1" placeholder="Hora">
+      <input type="time" name="time_at" value="<?php echo $reservation->time_at; ?>" class="form-control" id="inputEmail1" placeholder="Hora">
     </div>
   </div>
   <div class="form-group">
@@ -33,7 +33,7 @@ $medics = CategoryData::getAll();
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Proyecto</label>
     <div class="col-lg-4">
-<select name="project_id" class="form-control" required>
+<select name="project_id" class="form-control">
 <option value="">-- SELECCIONE --</option>
   <?php foreach($pacients as $p):?>
     <option value="<?php echo $p->id; ?>" <?php if($p->id==$reservation->project_id){ echo "selected"; }?>><?php echo $p->name; ?></option>
@@ -42,7 +42,7 @@ $medics = CategoryData::getAll();
     </div>
     <label for="inputEmail1" class="col-lg-2 control-label">Categoria</label>
     <div class="col-lg-4">
-<select name="category_id" class="form-control" required>
+<select name="category_id" class="form-control">
 <option value="">-- SELECCIONE --</option>
   <?php foreach($medics as $p):?>
     <option value="<?php echo $p->id; ?>" <?php if($p->id==$reservation->category_id){ echo "selected"; }?>><?php echo $p->name; ?></option>
