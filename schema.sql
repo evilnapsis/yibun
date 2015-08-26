@@ -1,5 +1,5 @@
-create database bookmedik;
-use bookmedik; 
+create database yibun;
+use yibun; 
 
 create table user (
 	id int not null auto_increment primary key,
@@ -13,7 +13,9 @@ create table user (
 	created_at datetime
 );
 
-create table pacient (
+insert into user (username,password,is_admin,created_at) value ("admin",sha1(md5("admin")),1,NOW());
+
+create table contact (
 	id int not null auto_increment primary key,
 	name varchar(50) not null,
 	lastname varchar(50),
@@ -27,43 +29,34 @@ create table pacient (
 
 create table category (
 	id int not null auto_increment primary key,
-	name varchar(200) not null
+	name varchar(200) not null,
+	description text
 	);
 
-insert into category (name) value ("Modulo 1");
+insert into category (name) values ("Development"),("Programming"),("Design");
 
-
-create table medic (
+create table project (
 	id int not null auto_increment primary key,
-	name varchar(50) not null,
-	lastname varchar(50),
-	email varchar(255) not null,
-	address varchar(255),
-	phone varchar(255),
-	image varchar(255),
-	is_active boolean not null default 1,
-	created_at datetime not null,
-	category_id int,
-	foreign key (category_id) references category(id)
-);
+	name varchar(200) not null,
+	description text
+	);
 
 
-insert into user (username,password,is_admin,created_at) value ("admin",sha1(md5("admin")),1,NOW());
 
 
-create table reservation(
+create table event(
 	id int not null auto_increment primary key,
 	title varchar(100) not null,
-	note text not null,
+	description text not null,
 	message text not null,
 	date_at varchar(50) not null,
 	time_at varchar(50) not null,
 	created_at datetime not null,
-	pacient_id int not null,
+	category_id int ,
 	user_id int not null,
-	medic_id int not null,
+	project_id int,
 	is_web boolean not null default 0,
 	foreign key (user_id) references user(id),
-	foreign key (pacient_id) references pacient(id),
-	foreign key (medic_id) references medic(id)
+	foreign key (category_id) references category(id),
+	foreign key (project_id) references project(id)
 );
