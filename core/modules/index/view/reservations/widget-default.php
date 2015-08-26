@@ -108,21 +108,21 @@ if($_GET["q"]!=""||$_GET["project_id"]!="" ||$_GET["category_id"]!="" ){
 			?>
 			<table class="table table-bordered table-hover">
 			<thead>
-			<th>Asunto</th>
-			<th>Paciente</th>
-			<th>Medico</th>
+			<th>Titulo</th>
+			<th>Proyecto</th>
+			<th>Categoria</th>
 			<th>Fecha</th>
 			<th></th>
 			</thead>
 			<?php
 			foreach($users as $user){
-				$pacient  = $user->getPacient();
-				$medic = $user->getMedic();
+				$project  = $user->getProject();
+				$category = $user->getCategory();
 				?>
 				<tr>
 				<td><?php echo $user->title; ?></td>
-				<td><?php echo $pacient->name." ".$pacient->lastname; ?></td>
-				<td><?php echo $medic->name." ".$pacient->lastname; ?></td>
+				<td><?php echo $project->name; ?></td>
+				<td><?php echo $category->name; ?></td>
 				<td><?php echo $user->date_at." ".$user->time_at; ?></td>
 				<td style="width:130px;">
 				<a href="index.php?view=editreservation&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a>

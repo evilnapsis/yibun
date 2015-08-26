@@ -11,8 +11,8 @@ class EventData {
 		$this->created_at = "NOW()";
 	}
 
-	public function getPacient(){ return PacientData::getById($this->pacient_id); }
-	public function getMedic(){ return MedicData::getById($this->medic_id); }
+	public function getProject(){ return ProjectData::getById($this->project_id); }
+	public function getCategory(){ return CategoryData::getById($this->category_id); }
 
 	public function add(){
 		$sql = "insert into event (title,description,project_id,date_at,time_at,category_id,user_id,created_at) ";
