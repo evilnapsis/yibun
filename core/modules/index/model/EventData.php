@@ -7,6 +7,7 @@ class EventData {
 		$this->name = "";
 		$this->lastname = "";
 		$this->email = "";
+		$this->category_id = "NULL";
 		$this->password = "";
 		$this->created_at = "NOW()";
 	}
@@ -16,7 +17,7 @@ class EventData {
 
 	public function add(){
 		$sql = "insert into event (title,description,project_id,date_at,time_at,category_id,user_id,created_at) ";
-		echo $sql .= "value (\"$this->title\",\"$this->description\",\"$this->project_id\",\"$this->date_at\",\"$this->time_at\",$this->category_id,$this->user_id,$this->created_at)";
+		 $sql .= "value (\"$this->title\",\"$this->description\",$this->project_id,\"$this->date_at\",\"$this->time_at\",$this->category_id,$this->user_id,$this->created_at)";
 		return Executor::doit($sql);
 	}
 

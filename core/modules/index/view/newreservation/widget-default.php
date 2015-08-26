@@ -31,7 +31,7 @@ $medics = CategoryData::getAll();
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Proyecto</label>
     <div class="col-lg-4">
-<select name="project_id" class="form-control" required>
+<select name="project_id" class="form-control">
 <option value="">-- SELECCIONE --</option>
   <?php foreach($pacients as $p):?>
     <option value="<?php echo $p->id; ?>"><?php echo $p->name; ?></option>
@@ -40,7 +40,7 @@ $medics = CategoryData::getAll();
     </div>
     <label for="inputEmail1" class="col-lg-2 control-label">Categoria</label>
     <div class="col-lg-4">
-<select name="category_id" class="form-control" required>
+<select name="category_id" class="form-control">
 <option value="">-- SELECCIONE --</option>
   <?php foreach($medics as $p):?>
     <option value="<?php echo $p->id; ?>"><?php echo $p->name; ?></option>
