@@ -1,10 +1,10 @@
 <?php
 
-$r = new ReservationData();
+$r = new EventData();
 $r->title = $_POST["title"];
-$r->note = $_POST["note"];
-$r->pacient_id = $_POST["pacient_id"];
-$r->medic_id = $_POST["medic_id"];
+$r->description = $_POST["description"];
+$r->project_id = $_POST["project_id"];
+$r->category_id = $_POST["category_id"];
 $r->date_at = $_POST["date_at"];
 $r->time_at = $_POST["time_at"];
 $r->user_id = $_SESSION["user_id"];

@@ -48,7 +48,7 @@ if(Session::getUID()!=""):
   $u = UserData::getById(Session::getUID());
 ?>
          <ul class="nav navbar-nav">
-          <li><a href="index.php?view=newreservation"><i class="fa fa-asterisk"></i> Nueva Cita</a></li>
+          <li><a href="index.php?view=newreservation"><i class="fa fa-asterisk"></i> Nuevo Evento</a></li>
           </ul> 
           <ul class="nav navbar-nav side-nav">
           <li><a href="index.php?view=home"><i class="fa fa-home"></i> Inicio</a></li>
