@@ -11,14 +11,14 @@
 </div>
 -->
 </div>
-<a href="./index.php?view=oldreservations" class="btn btn-default pull-right">Citas Anteriores</a>
-		<h1>Citas</h1>
+<a href="./index.php?view=oldreservations" class="btn btn-default pull-right">Eventos Anteriores</a>
+		<h1>Eventos</h1>
 <br>
 <form class="form-horizontal" role="form">
 <input type="hidden" name="view" value="reservations">
         <?php
-$pacients = PacientData::getAll();
-$medics = MedicData::getAll();
+$pacients = ProjectData::getAll();
+$medics = CategoryData::getAll();
         ?>
 
   <div class="form-group">
@@ -30,22 +30,22 @@ $medics = MedicData::getAll();
     </div>
     <div class="col-lg-2">
 		<div class="input-group">
-		  <span class="input-group-addon"><i class="fa fa-male"></i></span>
-<select name="pacient_id" class="form-control">
-<option value="">PACIENTE</option>
+		  <span class="input-group-addon"><i class="fa fa-flask"></i></span>
+<select name="project_id" class="form-control">
+<option value="">PROYECTO</option>
   <?php foreach($pacients as $p):?>
-    <option value="<?php echo $p->id; ?>" <?php if(isset($_GET["pacient_id"]) && $_GET["pacient_id"]!=""){ echo "selected"; } ?>><?php echo $p->id." - ".$p->name." ".$p->lastname; ?></option>
+    <option value="<?php echo $p->id; ?>" <?php if(isset($_GET["project_id"]) && $_GET["project_id"]!=""){ echo "selected"; } ?>><?php echo $p->name; ?></option>
   <?php endforeach; ?>
 </select>
 		</div>
     </div>
     <div class="col-lg-2">
 		<div class="input-group">
-		  <span class="input-group-addon"><i class="fa fa-support"></i></span>
-<select name="medic_id" class="form-control">
-<option value="">MEDICO</option>
+		  <span class="input-group-addon"><i class="fa fa-th-list"></i></span>
+<select name="category_id" class="form-control">
+<option value="">CATEGORIA</option>
   <?php foreach($medics as $p):?>
-    <option value="<?php echo $p->id; ?>" <?php if(isset($_GET["medic_id"]) && $_GET["medic_id"]!=""){ echo "selected"; } ?>><?php echo $p->id." - ".$p->name." ".$p->lastname; ?></option>
+    <option value="<?php echo $p->id; ?>" <?php if(isset($_GET["category_id"]) && $_GET["category_id"]!=""){ echo "selected"; } ?>><?php echo $p->name; ?></option>
   <?php endforeach; ?>
 </select>
 		</div>
@@ -66,41 +66,41 @@ $medics = MedicData::getAll();
 
 		<?php
 $users= array();
-if((isset($_GET["q"]) && isset($_GET["pacient_id"]) && isset($_GET["medic_id"]) && isset($_GET["date_at"])) && ($_GET["q"]!="" || $_GET["pacient_id"]!="" || $_GET["medic_id"]!="" || $_GET["date_at"]!="") ) {
+if((isset($_GET["q"]) && isset($_GET["project_id"]) && isset($_GET["category_id"]) && isset($_GET["date_at"])) && ($_GET["q"]!="" || $_GET["project_id"]!="" || $_GET["category_id"]!="" || $_GET["date_at"]!="") ) {
 $sql = "select * from reservation where ";
 if($_GET["q"]!=""){
 	$sql .= " title like '%$_GET[q]%' and note like '%$_GET[q] %' ";
 }
 
-if($_GET["pacient_id"]!=""){
+if($_GET["project_id"]!=""){
 if($_GET["q"]!=""){
 	$sql .= " and ";
 }
-	$sql .= " pacient_id = ".$_GET["pacient_id"];
+	$sql .= " project_id = ".$_GET["project_id"];
 }
 
-if($_GET["medic_id"]!=""){
-if($_GET["q"]!=""||$_GET["pacient_id"]!=""){
+if($_GET["category_id"]!=""){
+if($_GET["q"]!=""||$_GET["project_id"]!=""){
 	$sql .= " and ";
 }
 
-	$sql .= " medic_id = ".$_GET["medic_id"];
+	$sql .= " category_id = ".$_GET["category_id"];
 }
 
 
 
 if($_GET["date_at"]!=""){
-if($_GET["q"]!=""||$_GET["pacient_id"]!="" ||$_GET["medic_id"]!="" ){
+if($_GET["q"]!=""||$_GET["project_id"]!="" ||$_GET["category_id"]!="" ){
 	$sql .= " and ";
 }
 
 	$sql .= " date_at = \"".$_GET["date_at"]."\"";
 }
 
-		$users = ReservationData::getBySQL($sql);
+		$users = EventData::getBySQL($sql);
 
 }else{
-		$users = ReservationData::getAll();
+		$users = EventData::getAll();
 
 }
 		if(count($users)>0){
@@ -136,7 +136,7 @@ if($_GET["q"]!=""||$_GET["pacient_id"]!="" ||$_GET["medic_id"]!="" ){
 
 
 		}else{
-			echo "<p class='alert alert-danger'>No hay pacientes</p>";
+			echo "<p class='alert alert-danger'>No hay Eventos</p>";
 		}
 
 
