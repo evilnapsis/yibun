@@ -31,7 +31,7 @@ class EventData {
 
 // partiendo de que ya tenemos creado un objecto EventData previamente utilizamos el contexto
 	public function update(){
-		$sql = "update ".self::$tablename." set title=\"$this->title\",pacient_id=\"$this->pacient_id\",medic_id=\"$this->medic_id\",date_at=\"$this->date_at\",time_at=\"$this->time_at\",note=\"$this->note\" where id=$this->id";
+		$sql = "update ".self::$tablename." set title=\"$this->title\",project_id=\"$this->project_id\",category_id=\"$this->category_id\",date_at=\"$this->date_at\",time_at=\"$this->time_at\",description=\"$this->description\" where id=$this->id";
 		Executor::doit($sql);
 	}
 
