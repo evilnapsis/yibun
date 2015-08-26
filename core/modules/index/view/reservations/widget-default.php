@@ -67,9 +67,9 @@ $medics = CategoryData::getAll();
 		<?php
 $users= array();
 if((isset($_GET["q"]) && isset($_GET["project_id"]) && isset($_GET["category_id"]) && isset($_GET["date_at"])) && ($_GET["q"]!="" || $_GET["project_id"]!="" || $_GET["category_id"]!="" || $_GET["date_at"]!="") ) {
-$sql = "select * from reservation where ";
+$sql = "select * from event where ";
 if($_GET["q"]!=""){
-	$sql .= " title like '%$_GET[q]%' and note like '%$_GET[q] %' ";
+	$sql .= " title like '%$_GET[q]%' and description like '%$_GET[q] %' ";
 }
 
 if($_GET["project_id"]!=""){
