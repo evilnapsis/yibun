@@ -61,8 +61,8 @@ class EventData {
 		return Model::many($query[0],new EventData());
 	}
 
-	public static function getAllByPacientId($id){
-		$sql = "select * from ".self::$tablename." where pacient_id=$id order by date_at";
+	public static function getAllByProjectId($id){
+		$sql = "select * from ".self::$tablename." where project_id=$id order by date_at";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new EventData());
 	}

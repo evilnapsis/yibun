@@ -22,7 +22,7 @@
 				?>
 				<tr>
 				<td><?php echo $user->name." ".$user->lastname; ?></td>
-				<td style="width:130px;"><a href="index.php?view=editproject&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a> <a href="index.php?view=delproject&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs">Eliminar</a></td>
+				<td style="width:190px;"><a href="index.php?view=projecthistory&id=<?php echo $user->id;?>" class="btn btn-default btn-xs">Historial</a> <a href="index.php?view=editproject&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a> <a href="index.php?view=delproject&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs">Eliminar</a></td>
 				</tr>
 				<?php
 

@@ -36,8 +36,7 @@
 				<td><?php echo $user->address; ?></td>
 				<td><?php echo $user->email; ?></td>
 				<td><?php echo $user->phone; ?></td>
-				<td style="width:200px;">
-				<a href="index.php?view=contacthistory&id=<?php echo $user->id;?>" class="btn btn-default btn-xs">Historial</a>
+				<td style="width:130px;">
 				<a href="index.php?view=editcontact&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a>
 				<a href="index.php?view=delcontact&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs">Eliminar</a>
 
