@@ -1,6 +1,6 @@
 <?php
 
-$events = ReservationData::getEvery();
+$events = EventData::getEvery();
 foreach($events as $event){
 
 	$thejson[] = array("title"=>$event->title,"url"=>"./?view=editreservation&id=".$event->id,"start"=>$event->date_at."T".$event->time_at);
