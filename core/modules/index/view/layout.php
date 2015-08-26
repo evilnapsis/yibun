@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>.: BookMedik v1.5 :.</title>
+    <title>.: Yibun v1.5 :.</title>
 
     <!-- Bootstrap core CSS -->
     <link href="res/bootstrap3/css/bootstrap.css" rel="stylesheet">
@@ -37,7 +37,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="./">BookMedik <sup><small><span class="label label-info">v1.5</span></small></sup> </a>
+          <a class="navbar-brand" href="./">Yibun <sup><small><span class="label label-info">v1.0</span></small></sup> </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -52,10 +52,10 @@ if(Session::getUID()!=""):
           </ul> 
           <ul class="nav navbar-nav side-nav">
           <li><a href="index.php?view=home"><i class="fa fa-home"></i> Inicio</a></li>
-          <li><a href="index.php?view=reservations"><i class="fa fa-calendar"></i> Citas</a></li>
-          <li><a href="index.php?view=pacients"><i class="fa fa-male"></i> Pacientes</a></li>
-          <li><a href="index.php?view=medics"><i class="fa fa-support"></i> Medicos</a></li>
-          <li><a href="index.php?view=categories"><i class="fa fa-th-list"></i> Areas Medicas</a></li>
+          <li><a href="index.php?view=reservations"><i class="fa fa-calendar"></i> Eventos</a></li>
+          <li><a href="index.php?view=projects"><i class="fa fa-flask"></i> Proyectos</a></li>
+          <li><a href="index.php?view=categories"><i class="fa fa-th-list"></i> Categorias</a></li>
+          <li><a href="index.php?view=contacts"><i class="fa fa-male"></i> Contactos</a></li>
           <?php if($u->is_admin):?>
           <li><a href="index.php?view=changelog"><i class="fa fa-filter"></i> Log de cambios </a></li>
           <li><a href="index.php?view=users"><i class="fa fa-users"></i> Usuarios </a></li>
