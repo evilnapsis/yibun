@@ -4,7 +4,7 @@
 <h1>Tareas</h1>
 
 <form class="form-horizontal" role="form">
-<input type="hidden" name="view" value="notes">
+<input type="hidden" name="view" value="tasks">
         <?php
 $pacients = ProjectData::getAll();
 $medics = CategoryData::getAll();
