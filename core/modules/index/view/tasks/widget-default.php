@@ -100,9 +100,16 @@ if($_GET["q"]!=""||$_GET["project_id"]!=""){
 				?>
 				<tr>
 				<td style="width:30px">
-					<form>
-						<input type="checkbox" name="is_done">
+					<form id="frm-<?php echo $user->id; ?>">
+						<input type="checkbox" name="is_done" <?php if($user->is_done){ echo "checked"; }?> id="check-<?php echo $user->id; ?>">
+						<input type="hidden" name="task_id" value="<?php echo $user->id; ?>">
 					</form>
+					<script type="text/javascript">
+					$("#check-<?php echo $user->id; ?>").click(function(){
+						$.get("./?action=dotask",$("#frm-<?php echo $user->id; ?>").serialize(),function(data){
+						});
+					});
+					</script>
 				</td>
 				<td><?php echo $user->title; ?></td>
 				<td><?php if($project!=null ){ echo $project->name;} ?></td>
