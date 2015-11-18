@@ -48,8 +48,21 @@ if(Session::getUID()!=""):
   $u = UserData::getById(Session::getUID());
 ?>
          <ul class="nav navbar-nav">
-          <li><a href="index.php?view=newreservation"><i class="fa fa-asterisk"></i> Nuevo Evento</a></li>
-          </ul> 
+<li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <i class="fa fa-asterisk"></i> Nuevo <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="./?view=newnote">Nota</a></li>
+          <li><a href="./?view=newreservation">Evento</a></li>
+          <li><a href="./?view=newtask">Tarea</a></li>
+          <li><a href="./?view=newcontact">Contacto</a></li>
+          <li><a href="./?view=newproject">Proyecto</a></li>
+          <li><a href="./?view=newcategory">Categoria</a></li>
+        </ul>
+        </li>
+
+                  </ul> 
           <ul class="nav navbar-nav side-nav">
           <li><a href="index.php?view=home"><i class="fa fa-home"></i> Inicio</a></li>
           <li><a href="index.php?view=reservations"><i class="fa fa-calendar"></i> Eventos</a></li>
@@ -80,7 +93,7 @@ if(Session::getUID()!=""){
 
   }?>
           <ul class="nav navbar-nav navbar-right navbar-user">
-<li class="dropdown user-dropdown">
+<li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
         <b><u>EVILNΛPSIS</u></b> <b class="caret"></b>
         </a>
