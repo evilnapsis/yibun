@@ -41,15 +41,25 @@ create table project (
 	description text
 	);
 
-
-
-
 create table event(
 	id int not null auto_increment primary key,
 	title varchar(100) not null,
 	description text not null,
 	date_at varchar(50) not null,
 	time_at varchar(50) not null,
+	created_at datetime not null,
+	category_id int ,
+	user_id int not null,
+	project_id int,
+	foreign key (user_id) references user(id),
+	foreign key (category_id) references category(id),
+	foreign key (project_id) references project(id)
+);
+
+create table note(
+	id int not null auto_increment primary key,
+	title varchar(100) not null,
+	description text not null,
 	created_at datetime not null,
 	category_id int ,
 	user_id int not null,
