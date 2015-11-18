@@ -84,7 +84,7 @@ if($_GET["q"]!=""||$_GET["project_id"]!=""){
 			<th>Titulo</th>
 			<th>Proyecto</th>
 			<th>Categoria</th>
-			<th>Fecha</th>
+			<th>Creacion</th>
 			<th></th>
 			</thead>
 			<?php
@@ -102,7 +102,7 @@ if($_GET["q"]!=""||$_GET["project_id"]!=""){
 				<td><?php echo $user->title; ?></td>
 				<td><?php if($project!=null ){ echo $project->name;} ?></td>
 				<td><?php if($category!=null){ echo $category->name; }?></td>
-				<td><?php echo $user->date_at." ".$user->time_at; ?></td>
+				<td><?php echo $user->created_at; ?></td>
 				<td style="width:130px;">
 				<a href="index.php?view=editnote&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a>
 				<a href="index.php?action=delnote&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs">Eliminar</a>
