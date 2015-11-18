@@ -23,7 +23,7 @@ $medics = CategoryData::getAll();
 <select name="project_id" class="form-control">
 <option value="">PROYECTO</option>
   <?php foreach($pacients as $p):?>
-    <option value="<?php echo $p->id; ?>" <?php if(isset($_GET["project_id"]) && $_GET["project_id"]!=""){ echo "selected"; } ?>><?php echo $p->name; ?></option>
+    <option value="<?php echo $p->id; ?>" <?php if(isset($_GET["project_id"]) && $_GET["project_id"]==$p->id){ echo "selected"; } ?>><?php echo $p->name; ?></option>
   <?php endforeach; ?>
 </select>
 		</div>
@@ -34,7 +34,7 @@ $medics = CategoryData::getAll();
 <select name="category_id" class="form-control">
 <option value="">CATEGORIA</option>
   <?php foreach($medics as $p):?>
-    <option value="<?php echo $p->id; ?>" <?php if(isset($_GET["category_id"]) && $_GET["category_id"]!=""){ echo "selected"; } ?>><?php echo $p->name; ?></option>
+    <option value="<?php echo $p->id; ?>" <?php if(isset($_GET["category_id"]) && $_GET["category_id"]==$p->id){ echo "selected"; } ?>><?php echo $p->name; ?></option>
   <?php endforeach; ?>
 </select>
 		</div>
@@ -50,7 +50,7 @@ $medics = CategoryData::getAll();
 		<?php
 $users= array();
 if((isset($_GET["q"]) && isset($_GET["project_id"]) && isset($_GET["category_id"]) ) && ($_GET["q"]!="" || $_GET["project_id"]!="" || $_GET["category_id"]!="") ) {
-$sql = "select * from event where ";
+$sql = "select * from note where ";
 if($_GET["q"]!=""){
 	$sql .= " title like '%$_GET[q]%' and description like '%$_GET[q] %' ";
 }
@@ -69,7 +69,6 @@ if($_GET["q"]!=""||$_GET["project_id"]!=""){
 
 	$sql .= " category_id = ".$_GET["category_id"];
 }
-
 		$users = NoteData::getBySQL($sql);
 
 }else{
