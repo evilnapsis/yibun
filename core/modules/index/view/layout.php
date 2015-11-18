@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>.: Yibun v1.0 :.</title>
+    <title>.: Yibun v2.0 :.</title>
 
     <!-- Bootstrap core CSS -->
     <link href="res/bootstrap3/css/bootstrap.css" rel="stylesheet">
@@ -37,7 +37,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="./">Yibun <sup><small><span class="label label-info">v1.0</span></small></sup> </a>
+          <a class="navbar-brand" href="./">Yibun <sup><small><span class="label label-primary">v2.0</span></small></sup> </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -79,6 +79,16 @@ if(Session::getUID()!=""){
 
   }?>
           <ul class="nav navbar-nav navbar-right navbar-user">
+<li class="dropdown user-dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <b><u>EVILNΛPSIS</u></b> <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a target="_blank" href="http://evilnapsis.com/">Sitio Web</a></li>
+          <li><a target="_blank" href="http://evilnapsis.com/store/">Tienda de aplicaciones</a></li>
+        </ul>
+        </li>
+
             <li class="dropdown user-dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
         <?php echo $user; ?> <b class="caret"></b>
@@ -86,6 +96,8 @@ if(Session::getUID()!=""){
         <ul class="dropdown-menu">
           <li><a href="index.php?view=configuration">Configuracion</a></li>
           <li><a href="logout.php">Salir</a></li>
+        </ul>
+        </li>
         </ul>
 <?php else:?>
 <?php endif; ?>
