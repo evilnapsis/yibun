@@ -2,6 +2,12 @@
 <div class="col-md-12">
 <h1>Agenda Personal</h1>
 <p>Bienvenido a <b>Yibun</b> un Sistema de Agenda personal.</p>
+<h4> v2.0</h4>
+<ul>
+	<li>Modulo de Notas</li>
+	<li>Modulo de Tareas</li>
+</ul>
+
 <h4> v1.0</h4>
 <ul>
 	<li>Vista de Calendario</li>
