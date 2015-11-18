@@ -75,6 +75,7 @@ create table task(
 	description text not null,
 	created_at datetime not null,
 	category_id int ,
+	is_done boolean not null default 0,
 	user_id int not null,
 	project_id int,
 	foreign key (user_id) references user(id),
