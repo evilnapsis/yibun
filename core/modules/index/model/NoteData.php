@@ -15,7 +15,7 @@ class NoteData {
 	public function getCategory(){ return CategoryData::getById($this->category_id); }
 
 	public function add(){
-		$sql = "insert into event (title,description,project_id,category_id,user_id,created_at) ";
+		$sql = "insert into ".self::$tablename." (title,description,project_id,category_id,user_id,created_at) ";
 		 $sql .= "value (\"$this->title\",\"$this->description\",$this->project_id,$this->category_id,$this->user_id,$this->created_at)";
 		return Executor::doit($sql);
 	}
