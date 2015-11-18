@@ -11,7 +11,7 @@
   </ul>
 </div> -->
 </div>
-		<h1>Medicos</h1>
+		<h1>Contactos</h1>
 <br>
 		<?php
 
