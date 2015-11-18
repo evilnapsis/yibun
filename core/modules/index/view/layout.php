@@ -54,6 +54,7 @@ if(Session::getUID()!=""):
           <li><a href="index.php?view=home"><i class="fa fa-home"></i> Inicio</a></li>
           <li><a href="index.php?view=reservations"><i class="fa fa-calendar"></i> Eventos</a></li>
           <li><a href="index.php?view=notes"><i class="fa fa-file-text"></i> Notas</a></li>
+          <li><a href="index.php?view=tasks"><i class="fa fa-tasks"></i> Tareas</a></li>
           <li><a href="index.php?view=projects"><i class="fa fa-flask"></i> Proyectos</a></li>
           <li><a href="index.php?view=categories"><i class="fa fa-th-list"></i> Categorias</a></li>
           <li><a href="index.php?view=contacts"><i class="fa fa-male"></i> Contactos</a></li>
