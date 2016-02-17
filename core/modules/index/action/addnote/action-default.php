@@ -15,5 +15,5 @@ $r->project_id = $project_id;
 $r->user_id = $_SESSION["user_id"];
 $r->add();
 
-//Core::redir("./index.php?view=notes");
+Core::redir("./index.php?view=notes");
 ?>
