@@ -7,7 +7,7 @@ $medics = CategoryData::getAll();
 
 <div class="row">
 <div class="col-md-10">
-<h1>Nueva Nota</h1>
+<h4>Nueva Nota</h4>
 <form class="form-horizontal" role="form" method="post" action="./?action=addnote">
 <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Titulo</label>
@@ -18,7 +18,7 @@ $medics = CategoryData::getAll();
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Descripcion</label>
     <div class="col-lg-10">
-    <textarea class="form-control" rows="5" name="description" placeholder="Descripcion"></textarea>
+    <textarea class="form-control" rows="15" name="description" placeholder="Descripcion"></textarea>
     </div>
   </div>
 

@@ -7,7 +7,7 @@ $medics = CategoryData::getAll();
   <script>tinymce.init({ selector:'textarea' });</script>
 <div class="row">
 	<div class="col-md-10">
-	<h1>Editar Nota</h1>
+	<h4>Editar Nota</h4>
 	<br>
 <form class="form-horizontal" role="form" method="post" action="./?action=updatenote">
   <div class="form-group">
@@ -19,7 +19,7 @@ $medics = CategoryData::getAll();
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Descripcion</label>
     <div class="col-lg-10">
-    <textarea class="form-control" rows="5" name="description" placeholder="Descripcion"><?php echo $reservation->description;?></textarea>
+    <textarea class="form-control" rows="15" name="description" placeholder="Descripcion"><?php echo $reservation->description;?></textarea>
     </div>
   </div>
 
