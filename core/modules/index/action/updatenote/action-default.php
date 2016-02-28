@@ -12,7 +12,7 @@ if(count($_POST)>0){
 	if($_POST["project_id"]!=""){ $project_id = $_POST["project_id"]; }
 	$user->project_id = $project_id;
 
-	$user->description = $_POST["description"];
+	$user->description = htmlspecialchars($_POST["description"]);
 	$user->update();
 
 

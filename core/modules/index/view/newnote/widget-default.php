@@ -2,6 +2,8 @@
 $pacients = ProjectData::getAll();
 $medics = CategoryData::getAll();
 ?>
+  <script src="res/tinymce/tinymce.min.js"></script>
+  <script>tinymce.init({ selector:'textarea' });</script>
 
 <div class="row">
 <div class="col-md-10">

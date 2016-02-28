@@ -2,7 +2,7 @@
 
 $r = new NoteData();
 $r->title = $_POST["title"];
-$r->description = $_POST["description"];
+$r->description = htmlspecialchars($_POST["description"]);
 
 $category_id = "NULL";
 if($_POST["category_id"]!=""){ $category_id = $_POST["category_id"]; }
