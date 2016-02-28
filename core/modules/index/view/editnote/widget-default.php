@@ -1,5 +1,5 @@
 <?php 
-$reservation = EventData::getById($_GET["id"]);
+$reservation = NoteData::getById($_GET["id"]);
 $pacients = ProjectData::getAll();
 $medics = CategoryData::getAll();
 ?>
