@@ -1,3 +1,9 @@
+/**
+* Yibun: Sistema de organización personal
+* @author: @evilnapsis
+* @version: 1.0.0
+* @updated: 02/05/2026
+*/
 create database yibun;
 use yibun; 
 
