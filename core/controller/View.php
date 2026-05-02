@@ -13,18 +13,24 @@ class View {
 	public static function load($view){
 		// Module::$module;
 		if(!isset($_GET['view'])){
-			include "core/modules/".Module::$module."/view/".$view."/widget-default.php";
+			include "core/app/view/".$view."-view.php";
 		}else{
 
-
 			if(View::isValid()){
-				include "core/modules/".Module::$module."/view/".$_GET['view']."/widget-default.php";				
+				$can_view = true;
+				if(isset($_SESSION["user_id"])) {
+					$u = UserData::getById($_SESSION["user_id"]);
+					// En Yibun original no hay permisos granulares, por ahora permitimos todo
+				}
+
+				if($can_view) {
+					include "core/app/view/".$_GET['view']."-view.php";
+				} else {
+					View::Error("<div class='alert alert-danger fw-bold'><i class='bi bi-shield-lock me-2'></i> 403 ACCESO DENEGADO</div> <p class='text-muted small'>Su perfil no cuenta con permisos para ver este módulo.</p> <a href='./' class='btn btn-primary btn-sm'>Regresar al inicio</a>");
+				}
 			}else{
-				View::Error("<b>404 NOT FOUND</b> View <b>".$_GET['view']."</b> folder  !!");
+				View::Error("<b>404 NOT FOUND</b> View <b>".$_GET['view']."</b> folder !! - <a href='http://evilnapsis.com/legobox/help/' target='_blank'>Help</a>");
 			}
-
-
-
 		}
 	}
 
@@ -35,7 +41,7 @@ class View {
 	public static function isValid(){
 		$valid=false;
 		if(isset($_GET["view"])){
-			if(file_exists($file = "core/modules/".Module::$module."/view/".$_GET['view']."/widget-default.php")){
+			if(file_exists($file = "core/app/view/".$_GET['view']."-view.php")){
 				$valid = true;
 			}
 		}

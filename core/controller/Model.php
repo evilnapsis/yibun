@@ -17,19 +17,20 @@ class Model {
 	}
 
 	public static function getFullpath($modelname){
-		return "core/modules/".Module::$module."/model/".$modelname.".php";
+		return "core/app/model/".$modelname.".php";
 	}
 
 	public static function many($query,$aclass){
 		$cnt = 0;
 		$array = array();
-
 		while($r = $query->fetch_array()){
 			$array[$cnt] = new $aclass;
 			$cnt2=1;
 			foreach ($r as $key => $v) {
 				if($cnt2>0 && $cnt2%2==0){ 
-					$array[$cnt]->$key = $v;
+					if(property_exists($array[$cnt], $key)){
+						$array[$cnt]->$key = $v;
+					}
 				}
 				$cnt2++;
 			}
@@ -46,7 +47,9 @@ class Model {
 			$cnt=1;
 			foreach ($r as $key => $v) {
 				if($cnt>0 && $cnt%2==0){ 
-					$data->$key = $v;
+					if(property_exists($data, $key)){
+						$data->$key = $v;
+					}
 				}
 				$cnt++;
 			}
