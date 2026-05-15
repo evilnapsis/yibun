@@ -165,7 +165,7 @@
                   <h1 class="h3 fw-bold text-indigo-900">YIBUN</h1>
                   <p class="text-indigo-400 small text-uppercase fw-bold tracking-widest">Admin Access</p>
                 </div>
-                <form method="post" action="./?view=processlogin">
+                <form method="post" action="./?action=access&opt=login">
                   <div class="mb-4">
                     <label class="form-label fw-600 small text-indigo-900">Usuario</label>
                     <div class="input-group input-group-lg">

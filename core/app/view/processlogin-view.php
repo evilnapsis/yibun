@@ -1,7 +1,7 @@
 <?php
 
-if(isset($_SESSION["user_id"])) {
-	$user = $_POST['username'];
+if(!isset($_SESSION["user_id"])) {
+	$user = $_POST['email'];
 	$pass = sha1(md5($_POST['password']));
 
 	$u = UserData::getBy("username", $user);
